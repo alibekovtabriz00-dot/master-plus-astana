@@ -1,0 +1,696 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мастер+ — Мастер на час в Астане</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fa;
+  color:#17202a;
+  line-height:1.5;
+}
+
+header{
+  background:#111827;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#f59e0b;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:#f59e0b;
+}
+
+.hero{
+  background:linear-gradient(135deg,#111827,#263449);
+  color:white;
+  padding:85px 20px;
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:40px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#f59e0b;
+  color:#111827;
+  padding:7px 12px;
+  border-radius:20px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:52px;
+  line-height:1.08;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:19px;
+  color:#d7dde6;
+  max-width:650px;
+}
+
+.buttons{
+  margin-top:28px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:#f59e0b;
+  color:#111827;
+}
+
+.secondary{
+  border:1px solid #64748b;
+  color:white;
+}
+
+.whatsapp{
+  background:#25D366;
+  color:white;
+}
+
+.hero-card{
+  background:white;
+  color:#17202a;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 15px 45px #0005;
+}
+
+.hero-card h3{
+  margin-bottom:12px;
+}
+
+.hero-card div{
+  padding:10px 0;
+  border-bottom:1px solid #e5e7eb;
+}
+
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:35px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 5px 20px #0000000b;
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.price{
+  font-weight:800;
+  color:#d97706;
+  margin-top:14px;
+}
+
+.prices{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.prices td{
+  padding:16px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.prices td:last-child{
+  text-align:right;
+  font-weight:700;
+  color:#d97706;
+}
+
+.why{
+  background:#111827;
+  color:white;
+  max-width:none;
+}
+
+.why-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.why .card{
+  background:#1f2937;
+  color:white;
+}
+
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-info{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 5px 20px #0000000b;
+}
+
+.contact-info p{
+  margin-top:15px;
+}
+
+.phone{
+  color:#111827;
+  font-size:20px;
+  font-weight:800;
+}
+
+form{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 5px 20px #0000000b;
+}
+
+input,textarea{
+  width:100%;
+  padding:13px;
+  margin:8px 0 12px;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  font:inherit;
+}
+
+textarea{
+  height:110px;
+  resize:vertical;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+  font-size:16px;
+  width:100%;
+}
+
+footer{
+  background:#0b1120;
+  color:#cbd5e1;
+  text-align:center;
+  padding:28px 20px;
+}
+
+@media(max-width:750px){
+
+  nav{
+    display:none;
+  }
+
+  .hero-inner,
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:40px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:60px 20px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    text-align:center;
+    width:100%;
+  }
+
+  .prices td{
+    padding:12px 10px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      Мастер<span>+</span>
+    </div>
+
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div>
+
+      <div class="badge">
+        Астана • Выезд на дом
+      </div>
+
+      <h1>
+        Мастер на час — быстро и аккуратно
+      </h1>
+
+      <p>
+        Мелкий ремонт, электрика, сантехника,
+        сборка мебели и другие бытовые работы.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://wa.me/77073473750?text=Здравствуйте!%20Хочу%20заказать%20мастера."
+          target="_blank">
+          💬 Заказать в WhatsApp
+        </a>
+
+        <a
+          class="btn secondary"
+          href="#services">
+          Посмотреть услуги
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <h3>
+        Почему выбирают Мастер+?
+      </h3>
+
+      <div>✓ Выезд по Астане</div>
+      <div>✓ Доступные цены</div>
+      <div>✓ Цена обсуждается заранее</div>
+      <div>✓ Аккуратное выполнение</div>
+      <div>✓ Связь через WhatsApp</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- УСЛУГИ -->
+<section id="services">
+
+  <h2 class="section-title">
+    Наши услуги
+  </h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Электрика</h3>
+      <p>
+        Розетки, выключатели, светильники
+        и мелкие электромонтажные работы.
+      </p>
+      <div class="price">от 1 000 ₸</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚰</div>
+      <h3>Сантехника</h3>
+      <p>
+        Смесители, сифоны, шланги
+        и другие бытовые работы.
+      </p>
+      <div class="price">от 1 500 ₸</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🪑</div>
+      <h3>Сборка мебели</h3>
+      <p>
+        Сборка столов, тумб, кроватей,
+        шкафов и другой мебели.
+      </p>
+      <div class="price">от 2 000 ₸</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔨</div>
+      <h3>Мелкий ремонт</h3>
+      <p>
+        Полки, карнизы, крепления,
+        дверная фурнитура и другое.
+      </p>
+      <div class="price">от 1 000 ₸</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧱</div>
+      <h3>Ремонтные работы</h3>
+      <p>
+        Небольшие работы по дому,
+        требующие инструмента.
+      </p>
+      <div class="price">от 2 000 ₸</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <h3>Другая работа</h3>
+      <p>
+        Не нашли нужную услугу?
+        Напишите — обсудим задачу.
+      </p>
+      <div class="price">Договорная</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ЦЕНЫ -->
+<section id="prices">
+
+  <h2 class="section-title">
+    Примерные цены
+  </h2>
+
+  <table class="prices">
+
+    <tr>
+      <td>Выезд мастера</td>
+      <td>от 1 000 ₸</td>
+    </tr>
+
+    <tr>
+      <td>Установка розетки / выключателя</td>
+      <td>от 1 000 ₸</td>
+    </tr>
+
+    <tr>
+      <td>Установка светильника</td>
+      <td>от 1 500 ₸</td>
+    </tr>
+
+    <tr>
+      <td>Сборка небольшой мебели</td>
+      <td>от 2 000 ₸</td>
+    </tr>
+
+    <tr>
+      <td>Установка полки / карниза</td>
+      <td>от 1 000 ₸</td>
+    </tr>
+
+    <tr>
+      <td>Мелкий ремонт</td>
+      <td>от 1 000 ₸</td>
+    </tr>
+
+    <tr>
+      <td>Сантехнические работы</td>
+      <td>от 1 500 ₸</td>
+    </tr>
+
+  </table>
+
+  <p style="margin-top:15px;color:#64748b;text-align:center">
+    * Цена зависит от сложности работы и материалов.
+  </p>
+
+</section>
+
+
+<!-- КАК ЭТО РАБОТАЕТ -->
+<div class="why">
+
+  <div class="why-inner">
+
+    <h2 class="section-title">
+      Как это работает
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>1. Пишете в WhatsApp</h3>
+        <p>
+          Рассказываете, что нужно сделать.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>2. Согласовываем цену</h3>
+        <p>
+          Обсуждаем стоимость и удобное время.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>3. Мастер приезжает</h3>
+        <p>
+          Выполняет работу и приводит место в порядок.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- КОНТАКТЫ -->
+<section id="contacts">
+
+  <h2 class="section-title">
+    Заказать мастера
+  </h2>
+
+  <div class="contact">
+
+    <div class="contact-info">
+
+      <h3 style="font-size:25px">
+        Нужна помощь?
+      </h3>
+
+      <p>
+        Свяжитесь со мной напрямую
+        и расскажите, что нужно сделать.
+      </p>
+
+      <p>
+        📍 <b>Астана</b>
+      </p>
+
+      <p>
+        📞
+        <a
+          class="phone"
+          href="tel:+77073473750">
+          +7 707 347 3750
+        </a>
+      </p>
+
+      <p>
+        💬 <b>WhatsApp</b>
+      </p>
+
+      <a
+        class="btn whatsapp"
+        style="margin-top:20px"
+        href="https://wa.me/77073473750?text=Здравствуйте!%20Хочу%20заказать%20мастера."
+        target="_blank">
+        💬 Написать в WhatsApp
+      </a>
+
+    </div>
+
+
+    <form onsubmit="sendForm(event)">
+
+      <h3 style="margin-bottom:10px">
+        Быстрая заявка
+      </h3>
+
+      <input
+        id="name"
+        placeholder="Ваше имя"
+        required>
+
+      <input
+        id="phone"
+        placeholder="Ваш номер телефона"
+        required>
+
+      <textarea
+        id="task"
+        placeholder="Что нужно сделать?"
+        required></textarea>
+
+      <button
+        class="btn primary"
+        type="submit">
+        Отправить в WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  © 2026 Мастер+ — мастер на час в Астане
+  <br>
+  📞 +7 707 347 3750
+
+</footer>
+
+
+<script>
+
+function sendForm(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById('name').value;
+
+  const phone =
+    document.getElementById('phone').value;
+
+  const task =
+    document.getElementById('task').value;
+
+  const message =
+    "Здравствуйте! Хочу заказать мастера.%0A%0A" +
+    "Имя: " + encodeURIComponent(name) +
+    "%0AТелефон: " + encodeURIComponent(phone) +
+    "%0AЧто нужно сделать: " +
+    encodeURIComponent(task);
+
+  window.open(
+    "https://wa.me/77073473750?text=" + message,
+    "_blank"
+  );
+}
+
+</script>
+
+</body>
+</html>
+```
